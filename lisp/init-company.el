@@ -1,0 +1,53 @@
+;;; init-company.el --- Completion with company -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
+(setq tab-always-indent 'complete)
+(add-to-list 'completion-styles 'initials t)
+
+(setq company-idle-delay 0
+      company-minimum-prefix-length 1)
+
+(autoload 'company-mode "company")
+
+(when (maybe-require-package 'company)
+  (add-hook 'after-init-hook 'global-company-mode)
+  (with-eval-after-load 'company
+    (dolist (backend '(company-eclim company-semantic))
+      (delq backend company-backends))
+    (setq company-backends
+          '(company-files
+            company-capf
+            company-keywords
+            company-dabbrev
+            company-dabbrev-code
+            company-abbrev))
+    (custom-set-faces
+     '(company-preview-common
+       ((t (:inherit company-preview))))
+     '(company-tooltip
+       ((t (:background "#ffeead" :foreground "black"))))
+     '(company-tooltip-selection
+       ((t (:background "#69adc6" :foreground "white"))))
+     '(company-tooltip-annotation
+       ((t (:background "#ffeead" :foreground "red"))))
+     '(company-tooltip-common
+       ((t (:background "#ffeead" :foreground "black")))))
+    (diminish 'company-mode)
+    (define-key company-mode-map (kbd "C-j") 'company-complete)
+    (define-key company-active-map (kbd "C-m") 'company-complete-selection)
+    (define-key company-active-map (kbd "C-w") 'backward-kill-word)
+    (define-key company-mode-map [remap completion-at-point] 'company-complete)
+    (define-key company-mode-map [remap indent-for-tab-command] 'company-indent-or-complete-common)
+    (define-key company-active-map (kbd "M-/") 'company-other-backend)
+    (define-key company-active-map (kbd "C-n") 'company-select-next)
+    (define-key company-active-map (kbd "C-p") 'company-select-previous)
+    (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
+    (define-key company-active-map (kbd "M-.") 'company-show-location)
+    (setq-default company-dabbrev-other-buffers 'all
+                  company-tooltip-align-annotations t))
+  (global-set-key (kbd "M-C-/") 'company-complete))
+
+
+(provide 'init-company)
+;;; init-company.el ends here

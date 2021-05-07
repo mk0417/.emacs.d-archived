@@ -1,0 +1,6 @@
+[submodule "site-lisp/color-rg"]
+	path = site-lisp/color-rg
+	url = https://github.com/manateelazycat/color-rg.git
+[submodule "site-lisp/ess-stata-mode"]
+	path = site-lisp/ess-stata-mode
+	url = https://github.com/emacs-ess/ess-stata-mode.git
