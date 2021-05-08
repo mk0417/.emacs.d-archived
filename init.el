@@ -53,7 +53,7 @@
 (require 'init-selectrum)
 (require 'init-hippie-expand)
 (require 'init-default)
-(require 'init-evil) 
+(require 'init-evil)
 (require 'init-dired) ;; Must be after init-evil to make sure general is loaded
 (require 'init-company) ;; Must be after init-evil to make sure C-m will not be override by evil
 (require 'init-windows)
@@ -84,6 +84,7 @@
 ;; otherwise cannot find ob-jupyter when load init-org
 (require 'init-prog)
 (require 'init-org)
+(require 'init-hydra)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
