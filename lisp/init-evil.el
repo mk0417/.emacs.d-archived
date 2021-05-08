@@ -173,7 +173,6 @@
     "ts"  '(sql-connect :which-key "connect sql")
     "h"   '(:ignore t :which-key "hydra")
     "hf"  '(hydra-quick-files/body :which-key "hydra files")
-    "hp"  '(hydra-org-presentation/body :which-key "hydra presentation")
     "ht"  '(hydra-zoom/body :which-key "hydra text zoom")
     "q"   '(:ignore t :which-key "quit")
     "qq"  '(kill-emacs :which-key "quit emacs"))
