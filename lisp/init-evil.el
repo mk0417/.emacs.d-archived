@@ -120,6 +120,7 @@
     "bb"  '(consult-buffer :which-key "consult switch buffer")
     "bd"  '(kill-this-buffer :which-key "kill buffer")
     "bD"  '(kill-buffer-and-window :which-key "kill buffer and window")
+    "bi"  '(ibuffer :which-key "ibuffer")
     "br"  '(revert-buffer :which-key "revert buffer")
     "bs"  '((lambda () (interactive) (switch-to-buffer "*scratch*")) :which-key "switch to scratch")
     "`"   '((lambda () (interactive) (switch-to-buffer nil)) :which-key "switch to pervious buffer")
