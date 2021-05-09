@@ -397,7 +397,8 @@ typical word processor."
 
   (general-create-definer p-org-leader-def
     :prefix ";"
-    :states '(normal visual))
+    :states '(normal visual)
+    :keymaps 'org-mode-map)
   (p-org-leader-def
     "."   '(org-toggle-narrow-to-subtree :which-key "narrow to substree")
     "j"   '(:ignore t :which-key "presentation")
