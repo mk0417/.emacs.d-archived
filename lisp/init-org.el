@@ -332,7 +332,7 @@ typical word processor."
         org-tree-slide-modeline-display 'outside
         org-tree-slide-skip-done nil
         org-tree-slide-skip-comments t
-        org-tree-slide-skip-outline-level 3
+        org-tree-slide-skip-outline-level 5
         org-tree-slide-activate-message (propertize "Presentation mode ON" 'face 'success)
         org-tree-slide-deactivate-message (propertize "Presentation mode OFF" 'face 'success))
 
@@ -367,8 +367,7 @@ typical word processor."
            "*  %^{Title} %?\n%U\n%a\n")))
 
   (setq org-confirm-babel-evaluate nil
-        org-hide-emphasis-markers nil
-        org-startup-indented t)
+        org-hide-emphasis-markers t)
 
   (org-babel-do-load-languages
    'org-babel-load-languages
