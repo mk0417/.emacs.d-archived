@@ -191,7 +191,16 @@
     "sP"  '(color-rg-search-symbol-in-project :which-key "search symbol in project")
     "e"   '(:ignore t :which-key "eval")
     "ee"  '(eval-buffer :which-key "eval buffer")
-    "er"  '(eval-region :which-key "eval region")))
+    "er"  '(eval-region :which-key "eval region"))
+
+  (general-create-definer p-text-leader-def
+    :prefix ";"
+    :states '(normal visual))
+  (p-text-leader-def
+    "c"   '(:ignore t :which-key "spell check")
+    "cc"  '(flyspell-buffer :which-key "spell buffer")
+    "cw"  '(flyspell-word :which-key "spell word")
+    "cn"  '(flyspell-goto-next-error :which-key "next spell error")))
 
 
 (provide 'init-evil)
