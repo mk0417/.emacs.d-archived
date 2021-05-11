@@ -64,13 +64,15 @@
 
 (when *is-a-mac*
   (when (maybe-require-package 'ns-auto-titlebar)
-    (ns-auto-titlebar-mode)))
+    (ns-auto-titlebar-mode))
+  (setq ns-use-proxy-icon nil
+        frame-title-format nil))
 
 
-(setq frame-title-format
-      '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
+;; (setq frame-title-format
+;;       '((:eval (if (buffer-file-name)
+;;                    (abbreviate-file-name (buffer-file-name))
+;;                  "%b"))))
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
