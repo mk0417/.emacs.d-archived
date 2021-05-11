@@ -53,6 +53,7 @@
 (require 'init-selectrum)
 (require 'init-hippie-expand)
 (require 'init-default)
+(require 'init-snippet)
 (require 'init-evil)
 (require 'init-dired) ;; Must be after init-evil to make sure general is loaded
 (require 'init-company) ;; Must be after init-evil to make sure C-m will not be override by evil
