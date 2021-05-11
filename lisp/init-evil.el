@@ -150,6 +150,7 @@
     "ed"  '(p-insert-date :which-key "insert date")
     "ek"  '(p-insert-uk-date :which-key "insert UK date")
     "et"  '(p-html-region-insert-tag :which-key "insert html tag")
+    "ey"  '(yankpad-insert :which-key "insert yankpad snippet")
     "p"   '(:ignore t :which-key "project")
     "pp"  '(projectile-switch-project :which-key "switch project")
     "s"   '(:ignore t :which-key "search")
