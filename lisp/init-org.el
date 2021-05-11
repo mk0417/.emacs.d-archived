@@ -362,9 +362,9 @@ typical word processor."
         `(("t" "todo" entry (file ,(concat org-directory "/todo.org")) ; "" => `org-default-notes-file'
            "* NEXT %?\n%U\n" :clock-resume t)
           ("n" "note" entry (file ,(concat org-directory "/note.org"))
-           "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
+           "* %U\n")
           ("i" "idea" entry (file ,(concat org-directory "/idea.org"))
-           "*  %^{Title} %?\n%U\n%a\n")))
+           "*  %^{Title} %?\n%U\n")))
 
   (setq org-confirm-babel-evaluate nil
         org-hide-emphasis-markers t)
