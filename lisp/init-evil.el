@@ -96,13 +96,16 @@
   (define-key evil-insert-state-map (kbd "C-u")  'p-kill-to-begin-of-line)
   (define-key evil-insert-state-map (kbd "C-i")  'p-delete-backward-to-tab)
   (define-key evil-insert-state-map (kbd "C-;")  'p-insert-spaces)
+  (define-key evil-insert-state-map (kbd "C-k")  'delete-backward-char)
 
   (define-key evil-ex-completion-map (kbd "C-w") 'backward-kill-word)
 
   (define-key evil-inner-text-objects-map "f" 'evil-inner-bracket)
   (define-key evil-inner-text-objects-map "h" 'evil-inner-curly)
+  (define-key evil-inner-text-objects-map "d" 'evil-inner-double-quote)
   (define-key evil-outer-text-objects-map "f" 'evil-a-bracket)
   (define-key evil-outer-text-objects-map "h" 'evil-a-curly)
+  (define-key evil-outer-text-objects-map "d" 'evil-a-double-quote)
 
   (general-create-definer p-space-leader-def
     :prefix "SPC"
