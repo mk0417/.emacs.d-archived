@@ -27,22 +27,14 @@
   (clear-abbrev-table org-mode-abbrev-table))
 (define-abbrev-table 'org-mode-abbrev-table
   '(
-    ("tit" "#+TITLE:
-#+AUTHOR: Peng Li
-#+OPTIONS: ^:nil")
-
-    ("pysrc" "#+begin_src jupyter-python :session py :eval no-export
-  #+end_src")
-
-    ("shsrc" "#+begin_src sh
-  #+end_src ")
-
-    ("stasrc"  "#+begin_src jupyter-stata :session stata :kernel stata :eval no-export
-  #+end_src")
-
-    ("tab" "|   |   |
-|---+---|
-|   |   |")))
+    ("tit" "#+TITLE:\n#+AUTHOR: Peng Li\n#+OPTIONS: ^:nil")
+    ("srcpy" "#+begin_src jupyter-python :session py :eval no-export\n\n#+end_src")
+    ("srcsh" "#+begin_src sh\n\n#+end_src ")
+    ("srcsta"  "#+begin_src jupyter-stata :session stata :kernel stata :eval no-export\n\n#+end_src")
+    ("tab" "|   |   |\n|---+---|\n|   |   |")
+    ("texeq" "\\begin{equation*}\n\n\\end{equation*}")
+    ("texeqn" "\\begin{equation*}\n\n\\end{equation*}")
+    ("texeqi" "$$$$")))
 
 (setq save-abbrevs nil)
 
