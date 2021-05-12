@@ -394,12 +394,16 @@ typical word processor."
   (add-to-list 'org-structure-template-alist '("t" . "src jupyter-stata :session stata :eval no-export"))
   (add-to-list 'org-structure-template-alist '("j" . "src jupyter-python :session py :eval no-export"))
 
+  ;; Latex
+  (plist-put org-format-latex-options :scale 1.8)
+
   (general-create-definer p-org-leader-def
     :prefix ";"
     :states '(normal visual)
     :keymaps 'org-mode-map)
   (p-org-leader-def
     "."   '(org-toggle-narrow-to-subtree :which-key "narrow to substree")
+    ";"   '(org-toggle-latex-fragment :which-key "latex preview")
     "j"   '(:ignore t :which-key "presentation")
     "jj"  '(p-org-presentation-on :which-key "presentation on")
     "jJ"  '(p-org-presentation-off :which-key "presentation off")
