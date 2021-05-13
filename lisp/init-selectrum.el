@@ -67,6 +67,10 @@
   (interactive "P")
   (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) initial))
 
+(defun p-consult-rg-other-dir (&optional initial)
+  (interactive "P")
+  (consult--grep "Ripgrep current dir" consult-ripgrep-command (read-directory-name "consult-rg directory:") initial))
+
 (defun p-consult-rg-at-point-current-dir ()
   (interactive)
   (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) (thing-at-point 'symbol)))
