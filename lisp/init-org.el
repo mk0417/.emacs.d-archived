@@ -309,6 +309,7 @@ typical word processor."
 (maybe-require-package 'olivetti)
 (maybe-require-package 'org-journal)
 
+
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-M-<up>") 'org-up-element)
   (when *is-a-mac*
@@ -393,6 +394,13 @@ typical word processor."
   (add-to-list 'org-structure-template-alist '("r" . "src R :session r :eval no-export"))
   (add-to-list 'org-structure-template-alist '("t" . "src jupyter-stata :session stata :eval no-export"))
   (add-to-list 'org-structure-template-alist '("j" . "src jupyter-python :session py :eval no-export"))
+
+  ;; Ignore heading with no_heading tag when exporting
+  ;; https://emacs.stackexchange.com/questions/9492/is-it-possible-to-export-content-of-subtrees-without-their-headings/17677
+  (defun p-org-export-no-heading (backend)
+    (org-map-entries (lambda () (delete-region (point-at-bol) (point-at-eol)))
+                     "no_heading"))
+  (add-hook 'org-export-before-processing-hook 'p-org-export-no-heading)
 
   ;; Latex
   (plist-put org-format-latex-options :scale 1.8)

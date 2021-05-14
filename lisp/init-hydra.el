@@ -23,10 +23,12 @@ _e_: end                             _p_: previous slide
 _i_: research idea                   _n_: my notes
 _t_: todo                            _l_: literature
 _s_: scratch note                    _j_: journal
+_y_: yankpad                         ^ ^
   "
   ("i" (find-file "~/Dropbox/org/idea.org"))
   ("s" (find-file "~/Dropbox/org/note.org"))
   ("t" (find-file "~/Dropbox/org/todo.org"))
+  ("y" (find-file "~/Dropbox/org/yankpad.org"))
   ("j" (dired "~/Dropbox/org/journal"))
   ("n" (dired "~/Dropbox/org/p-notes"))
   ("l" (dired "~/Dropbox/literature")))

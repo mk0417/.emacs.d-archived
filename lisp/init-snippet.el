@@ -26,12 +26,12 @@
 (when (boundp 'org-mode-abbrev-table)
   (clear-abbrev-table org-mode-abbrev-table))
 (define-abbrev-table 'org-mode-abbrev-table
-  '(
-    ("tit" "#+TITLE:\n#+AUTHOR: Peng Li\n#+OPTIONS: ^:nil")
+  '(("tit" "#+TITLE:\n#+AUTHOR: Peng Li\n#+OPTIONS: ^:nil")
     ("srcpy" "#+begin_src jupyter-python :session py :eval no-export\n\n#+end_src")
     ("srcsh" "#+begin_src sh\n\n#+end_src ")
     ("srcsta"  "#+begin_src jupyter-stata :session stata :kernel stata :eval no-export\n\n#+end_src")
     ("tab" "|   |   |\n|---+---|\n|   |   |")
+    ("noh" "*****")
     ("texeq" "\\begin{equation*}\n\n\\end{equation*}")
     ("texeqn" "\\begin{equation*}\n\n\\end{equation*}")
     ("texeqi" "$$$$")))
