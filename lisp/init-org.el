@@ -341,6 +341,8 @@ typical word processor."
         olivetti-minimum-body-width 80
         olivetti-recall-visual-line-mode-entry-state t)
 
+  (setq org-tags-column 0)
+
   (defun p-org-presentation-on ()
     (interactive)
     (progn
