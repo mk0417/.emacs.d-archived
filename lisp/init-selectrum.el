@@ -6,7 +6,7 @@
   (add-hook 'after-init-hook 'selectrum-mode)
   (setq-default selectrum-fix-vertical-window-height t)
 
-  (global-set-key (kbd "C-,") 'selectrum-quick-insert)
+  (global-set-key (kbd "C-'") 'selectrum-quick-insert)
 
   (when (maybe-require-package 'selectrum-prescient)
     (require 'prescient)

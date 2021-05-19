@@ -17,7 +17,7 @@
       modus-themes-scale-1 1.5
       modus-themes-scale-2 1.3
       modus-themes-scale-2 0.9
-      modus-themes-org-blocks 'grayscale)
+      modus-themes-org-blocks 'gray-background)
 
 (setq modus-themes-headings
       '((t . line)))
