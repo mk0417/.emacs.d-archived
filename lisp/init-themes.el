@@ -4,7 +4,9 @@
 
 (require-package 'modus-themes)
 
-(setq modus-themes-syntax 'green-strings
+(setq modus-themes-slanted-constructs t
+      modus-themes-bold-constructs t
+      modus-themes-syntax 'green-strings
       modus-themes-links 'faint
       modus-themes-fringes 'intense
       modus-themes-prompts 'intense-accented
@@ -14,9 +16,9 @@
       modus-themes-region 'bg-only)
 
 (setq modus-themes-scale-headings t
-      modus-themes-scale-1 1.5
-      modus-themes-scale-2 1.3
-      modus-themes-scale-2 0.9
+      modus-themes-scale-4 1.3
+      modus-themes-scale-3 1.2
+      modus-themes-scale-2 1.1
       modus-themes-org-blocks 'gray-background)
 
 (setq modus-themes-headings
