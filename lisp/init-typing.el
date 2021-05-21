@@ -2,195 +2,52 @@
 ;;; Commentary:
 ;;; Code:
 
+(when (maybe-require-package 'key-chord)
+  (key-chord-mode 1)
+  (setq key-chord-two-keys-delay 0.25)
+  (dolist (m (list evil-insert-state-map evil-ex-completion-map minibuffer-mode-map))
+    (key-chord-define m "kk" "()\C-b")
+    (key-chord-define m ",," "[]\C-b")
+    (key-chord-define m "hh" "{}\C-b")
+    (key-chord-define m "gt" "!")
+    (key-chord-define m "qa" "@")
+    (key-chord-define m "lk" "$")
+    (key-chord-define m "fh" "%")
+    (key-chord-define m "pw" "^")
+    (key-chord-define m "aa" "&")
+    (key-chord-define m "cj" "*")
+    (key-chord-define m "uu" "_")
+    (key-chord-define m ",j" "-")
+    (key-chord-define m "jj" "+")
+    (key-chord-define m ",e" "=")
+    (key-chord-define m "sg" "|")
+    (key-chord-define m "bw" "~")
+    (key-chord-define m ",l" "<")
+    (key-chord-define m ",g" ">")
+    (key-chord-define m "ww" "?")
+    (key-chord-define m "vv" "#")
+    (key-chord-define m "ej" "<-")
+    (key-chord-define m "rj" "%>%")
+    (key-chord-define m "nj" "|>")
+    (key-chord-define m "mj" "=>")
+    (key-chord-define m ";f" "5")
+    (key-chord-define m ";i" "6")
+    (key-chord-define m ";s" "7")
+    (key-chord-define m ";e" "8")
+    (key-chord-define m ";n" "9")
+    (key-chord-define m ";t" "0")))
+
+;; british pound
+;; £ is not working in key-chord
 (with-eval-after-load 'general
   (general-evil-setup t)
-  ;; parenthesis
-  (defun p-insert-paren ()
-    (interactive)
-    (insert "()")
-    (backward-char 1))
-  (general-imap "k"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "k" 'p-insert-paren))
-  ;; square brackets
-  (defun p-insert-sbracket ()
-    (interactive)
-    (insert "[]")
-    (backward-char 1))
-  (general-imap "i"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "i" 'p-insert-sbracket))
-  ;; curly brackets
-  (defun p-insert-cbracket ()
-    (interactive)
-    (insert "{}")
-    (backward-char 1))
-  (general-imap "h"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "h" 'p-insert-cbracket))
-  ;; exclamation
-  (defun p-insert-exc ()
-    (interactive)
-    (insert "!"))
-  (general-imap "g"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "t" 'p-insert-exc))
-  ;; at
-  (defun p-insert-at ()
-    (interactive)
-    (insert "@"))
-  (general-imap "q"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "a" 'p-insert-at))
-  ;; british pound
   (defun p-insert-pound ()
     (interactive)
     (insert "£"))
   (general-imap "y"
     (general-key-dispatch 'self-insert-command
       :timeout 0.25
-      "b" 'p-insert-pound))
-  ;; dollar
-  (defun p-insert-dollar ()
-    (interactive)
-    (insert "$"))
-  (general-imap "l"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "k" 'p-insert-dollar))
-  ;; percentage
-  (defun p-insert-percent ()
-    (interactive)
-    (insert "%"))
-  (general-imap "f"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "h" 'p-insert-percent))
-  ;; carat
-  (defun p-insert-carat ()
-    (interactive)
-    (insert "^"))
-  (general-imap "p"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "w" 'p-insert-carat))
-  ;; and
-  (defun p-insert-and ()
-    (interactive)
-    (insert "&"))
-  (general-imap "a"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "a" 'p-insert-and))
-  ;; asterisk
-  (defun p-insert-asterisk ()
-    (interactive)
-    (insert "*"))
-  (general-imap "c"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-asterisk))
-  ;; underscore
-  (defun p-insert-underscore ()
-    (interactive)
-    (insert "_"))
-  (general-imap "u"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "u" 'p-insert-underscore))
-  ;; plus
-  (defun p-insert-plus ()
-    (interactive)
-    (insert "+"))
-  (general-imap "j"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-plus))
-  ;; pipe
-  (defun p-insert-pipe ()
-    (interactive)
-    (insert "|"))
-  (general-imap "s"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "g" 'p-insert-pipe))
-  ;; tilde
-  (defun p-insert-tilde ()
-    (interactive)
-    (insert "~"))
-  (general-imap "b"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "w" 'p-insert-tilde))
-  ;; less than
-  (defun p-insert-less ()
-    (interactive)
-    (insert "<"))
-  (general-imap "x"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "y" 'p-insert-less))
-  ;; greater than
-  (defun p-insert-greater ()
-    (interactive)
-    (insert ">"))
-  (general-imap "d"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "y" 'p-insert-greater))
-  ;; question
-  (defun p-insert-question ()
-    (interactive)
-    (insert "?"))
-  (general-imap "w"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "w" 'p-insert-question))
-  ;; r assign
-  (defun p-insert-r-assign ()
-    (interactive)
-    (insert "<-"))
-  (general-imap "e"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-r-assign))
-  ;; r connect
-  (defun p-insert-r-connect ()
-    (interactive)
-    (insert "%>%"))
-  (general-imap "r"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-r-connect))
-  ;; hash
-  (defun p-insert-hash ()
-    (interactive)
-    (insert "#"))
-  (general-imap "v"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "v" 'p-insert-hash))
-  ;; julia pipe
-  (defun p-insert-julia-pipe ()
-    (interactive)
-    (insert "|>"))
-  (general-imap "n"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-julia-pipe))
-  ;; julia out
-  (defun p-insert-julia-out ()
-    (interactive)
-    (insert "=>"))
-  (general-imap "m"
-    (general-key-dispatch 'self-insert-command
-      :timeout 0.25
-      "j" 'p-insert-julia-out)))
+      "b" 'p-insert-pound)))
 
 
 (provide 'init-typing)
