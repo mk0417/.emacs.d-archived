@@ -10,6 +10,8 @@
           package-native-compile t
           load-prefer-newer t))
 
+(setq initial-major-mode 'fundamental-mode)
+
 ;; disable bell sound
 (setq ring-bell-function 'ignore)
 

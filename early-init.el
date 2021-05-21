@@ -8,6 +8,7 @@
 ;;; Code:
 
 (setq package-enable-at-startup nil)
+(setq package--init-file-ensured t)
 
 ;; Allow loading from the package cache
 (setq package-quickstart t)
