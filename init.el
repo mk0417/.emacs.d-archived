@@ -110,8 +110,8 @@
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
 (when (fboundp 'global-eldoc-mode)
-  (add-hook 'after-init-hook 'global-eldoc-mode))
-
+  (add-hook 'after-init-hook 'global-eldoc-mode)
+  (diminish 'eldoc-mode))
 
 ;; Allow access from emacsclient
 (add-hook 'after-init-hook

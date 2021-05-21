@@ -10,6 +10,8 @@
 ;; Abbrev mode
 (setq-default abbrev-mode t)
 
+(diminish 'abbrev-mode)
+
 (clear-abbrev-table global-abbrev-table)
 
 (define-abbrev-table 'global-abbrev-table

@@ -27,7 +27,8 @@
   (when (maybe-require-package 'evil-escape)
     (with-eval-after-load  'evil
       (evil-escape-mode 1)
-      (setq-default evil-escape-key-sequence "fd")))
+      (setq-default evil-escape-key-sequence "fd"))
+    (diminish 'evil-escape-mode))
 
   (when (maybe-require-package 'evil-exchange)
     (with-eval-after-load  'evil

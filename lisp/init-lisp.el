@@ -9,6 +9,9 @@
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ELisp")))
 
+(with-eval-after-load 'elisp-slime-nav
+  (diminish 'elisp-slime-nav-mode))
+
 ;; initial scratch buffer message
 (setq initial-scratch-message
       (concat ";; Hello Peng, welcome to EMACS and happy hacking\n"

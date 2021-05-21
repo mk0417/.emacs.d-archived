@@ -52,7 +52,9 @@
 (when (maybe-require-package 'company-box)
   (add-hook 'company-mode-hook 'company-box-mode)
   (setq company-box-doc-enable nil
-        company-box-backends-colors nil))
+        company-box-backends-colors nil)
+  (with-eval-after-load 'company-box
+    (diminish 'company-box-mode)))
 
 
 (provide 'init-company)
