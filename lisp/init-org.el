@@ -372,6 +372,8 @@ typical word processor."
   (setq org-confirm-babel-evaluate nil
         org-hide-emphasis-markers t)
 
+  (setq org-fontify-quote-and-verse-blocks t)
+
   (org-babel-do-load-languages
    'org-babel-load-languages
    `((R . t)
