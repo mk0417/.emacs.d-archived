@@ -6,6 +6,7 @@
 
 (setq modus-themes-slanted-constructs t
       modus-themes-bold-constructs t
+      modus-themes-mode-line 'accented-moody
       modus-themes-syntax 'green-strings
       modus-themes-links 'faint
       modus-themes-fringes 'intense
@@ -23,6 +24,8 @@
 
 (setq modus-themes-headings
       '((t . line)))
+
+(setq x-underline-at-descent-line t)
 
 (load-theme 'modus-vivendi t)
 
