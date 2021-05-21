@@ -49,5 +49,11 @@
   (global-set-key (kbd "M-C-/") 'company-complete))
 
 
+(when (maybe-require-package 'company-box)
+  (add-hook 'company-mode-hook 'company-box-mode)
+  (setq company-box-doc-enable nil
+        company-box-backends-colors nil))
+
+
 (provide 'init-company)
 ;;; init-company.el ends here
