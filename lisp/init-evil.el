@@ -99,6 +99,7 @@
   (define-key evil-insert-state-map (kbd "C-k")  'delete-backward-char)
 
   (define-key evil-ex-completion-map (kbd "C-w") 'backward-kill-word)
+  (define-key evil-ex-completion-map (kbd "C-f") 'forward-char)
 
   (define-key evil-inner-text-objects-map "f" 'evil-inner-bracket)
   (define-key evil-inner-text-objects-map "h" 'evil-inner-curly)
@@ -179,6 +180,7 @@
     "tp"  '(variable-pitch-mode :which-key "pitch font mode")
     "ts"  '(sql-connect :which-key "connect sql")
     "tw"  '(count-words :which-key "count words")
+    "tf"  '(p-display-file-name :which-key "show file name")
     "h"   '(:ignore t :which-key "hydra")
     "hf"  '(hydra-quick-files/body :which-key "hydra files")
     "ht"  '(hydra-zoom/body :which-key "hydra text zoom")

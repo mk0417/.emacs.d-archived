@@ -229,6 +229,11 @@
     (insert (concat "<" tag ">"))
     (goto-char real-end)))
 
+;; Display file name
+(defun p-display-file-name ()
+  (interactive)
+  (message buffer-file-name))
+
 ;; google search
 ;; https://emacsredux.com/blog/2013/03/28/google/
 (defun p-google-search ()
