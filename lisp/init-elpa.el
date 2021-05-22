@@ -52,7 +52,7 @@ locate PACKAGE."
      nil)))
 
 ;;; Fire up package.el
-;; (setq package-enable-at-startup nil)
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 ;; package.el updates the saved version of package-selected-packages correctly only
