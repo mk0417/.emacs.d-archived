@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;; this must be set before loading evil
+(setq evil-collection-want-unimpaired-p nil)
 (setq evil-want-keybinding nil)
 
 (when (maybe-require-package 'evil)
