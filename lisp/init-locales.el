@@ -22,5 +22,6 @@
 (unless (eq system-type 'windows-nt)
   (set-selection-coding-system 'utf-8))
 
+
 (provide 'init-locales)
 ;;; init-locales.el ends here

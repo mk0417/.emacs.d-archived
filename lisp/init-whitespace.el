@@ -4,9 +4,7 @@
 
 (setq-default show-trailing-whitespace nil)
 
-
 ;;; Whitespace
-
 (defun sanityinc/show-trailing-whitespace ()
   "Enable display of trailing whitespace in this buffer."
   (setq-local show-trailing-whitespace t))

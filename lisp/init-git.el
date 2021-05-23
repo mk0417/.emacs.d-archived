@@ -14,7 +14,6 @@
   (global-set-key (kbd "C-x v t") 'git-timemachine-toggle))
 
 
-
 (when (maybe-require-package 'magit)
   (setq-default magit-diff-refine-hunk t)
 

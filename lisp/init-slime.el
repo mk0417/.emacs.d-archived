@@ -10,7 +10,6 @@
   (with-eval-after-load 'slime-company
     (add-to-list 'company-backends 'company-slime)))
 
-
 ;;; Lisp buffers
 
 (with-eval-after-load 'slime
@@ -21,9 +20,7 @@
       (push 'slime-company features))
     (slime-setup features)) )
 
-
 ;;; REPL
-
 (defun sanityinc/slime-repl-setup ()
   "Mode setup function for slime REPL."
   (sanityinc/lisp-setup))

@@ -17,5 +17,6 @@
 
 (maybe-require-package 'browse-at-remote)
 
+
 (provide 'init-vc)
 ;;; init-vc.el ends here

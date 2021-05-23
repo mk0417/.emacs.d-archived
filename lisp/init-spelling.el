@@ -12,5 +12,6 @@
     (define-key flyspell-mode-map (kbd "C-;") nil)
     (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
 
+
 (provide 'init-spelling)
 ;;; init-spelling.el ends here
