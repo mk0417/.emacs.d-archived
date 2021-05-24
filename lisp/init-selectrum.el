@@ -75,6 +75,16 @@
   (interactive)
   (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) (thing-at-point 'symbol)))
 
+(defun p-consult-fd-local (&optional dir initial)
+  (interactive "P")
+  (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
+    (consult-find dir initial)))
+
+(defun p-consult-fd-global (&optional initial)
+  (interactive "P")
+  (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
+    (consult-find "~/" initial)))
+
 
 (provide 'init-selectrum)
 ;;; init-selectrum.el ends here
