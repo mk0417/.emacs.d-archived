@@ -27,6 +27,14 @@
 
   (when (maybe-require-package 'evil-escape)
     (with-eval-after-load  'evil
+      (setq evil-escape-excluded-states '(normal multiedit emacs motion))
+      ;; Disable fd in minibuffer
+      ;; https://github.com/hlissner/doom-emacs/blob/develop/modules/editor/evil/config.el
+      (add-hook 'evil-escape-inhibit-functions
+                (defun p-evil-inhibit-escape-in-minibuffer ()
+                  (and (minibufferp)
+                       (or (not (bound-and-true-p evil-collection-setup-minibuffer))
+                           (evil-normal-state-p)))))
       (evil-escape-mode 1)
       (setq-default evil-escape-key-sequence "fd"))
     (diminish 'evil-escape-mode))
@@ -163,11 +171,14 @@
     "s"   '(:ignore t :which-key "search")
     "ss"  '(consult-line :which-key "consult line")
     "sS"  '(p-consult-at-point-line :which-key "consult at-point line")
+    "sm"  '(consult-multi-occur :which-key "consult multi occur")
     "sp"  '(consult-ripgrep :which-key "consult-rg project")
     "sP"  '(sanityinc/consult-ripgrep-at-point :which-key "consult-rg at-point project")
     "sd"  '(p-consult-rg-current-dir :which-key "consult-rg current dir")
     "sD"  '(p-consult-rg-at-point-current-dir :which-key "consult-rg at-point current dir")
     "so"  '(p-consult-rg-other-dir :which-key "consult-rg other dir")
+    "sf"  '(p-consult-fd-global :which-key "consult-fd global files")
+    "sF"  '(p-consult-fd-local :which-key "consult-fd local files")
     "si"  '(consult-imenu :which-key "consult imenu")
     "sl"  '(consult-outline :which-key "consult outline")
     "sr"  '(rg :which-key "rg search directory")
