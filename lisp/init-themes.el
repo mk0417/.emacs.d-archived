@@ -27,7 +27,8 @@
 
 (setq x-underline-at-descent-line t)
 
-(load-theme 'modus-vivendi t)
+(modus-themes-load-themes)
+(modus-themes-load-vivendi)
 
 ;; selected text color
 (set-face-attribute 'region nil :background "#696969")
