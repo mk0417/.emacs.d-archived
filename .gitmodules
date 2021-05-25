@@ -4,3 +4,6 @@
 [submodule "site-lisp/ess-stata-mode"]
 	path = site-lisp/ess-stata-mode
 	url = https://github.com/emacs-ess/ess-stata-mode.git
+[submodule "site-lisp/uchronia"]
+	path = site-lisp/uchronia
+	url = https://github.com/minad/uchronia.git
