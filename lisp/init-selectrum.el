@@ -86,5 +86,9 @@
     (consult-find "~/" initial)))
 
 
+;; Non-melpa packages
+(require 'color-rg)
+
+
 (provide 'init-selectrum)
 ;;; init-selectrum.el ends here

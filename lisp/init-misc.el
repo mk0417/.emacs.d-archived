@@ -46,5 +46,12 @@
 (add-auto-mode 'conf-mode "^Procfile\\'")
 
 
+;; Non-melpa packages
+(require 'uchronia)
+(uchronia-mode 1)
+(with-eval-after-load 'uchronia
+  (diminish 'uchronia-mode))
+
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

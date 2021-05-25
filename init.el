@@ -127,13 +127,6 @@
 (require 'init-locales)
 
 
-;; Non-melpa packages
-(require 'color-rg)
-(require 'ess-stata-mode)
-(require 'uchronia)
-(uchronia-mode 1)
-
-
 (provide 'init)
 ;; Local Variables:
 ;; coding: utf-8

@@ -63,6 +63,9 @@
 
 
 ;; Stata
+;; Non-melpa packages
+(require 'ess-stata-mode)
+
 ;; https://github.com/hieutkt/.doom.d/blob/master/config.el
 (setq inferior-STA-start-args ""
       inferior-STA-program (executable-find "stata-mp")
