@@ -213,7 +213,10 @@
     "sP"  '(color-rg-search-symbol-in-project :which-key "search symbol in project")
     "e"   '(:ignore t :which-key "eval")
     "ee"  '(eval-buffer :which-key "eval buffer")
-    "er"  '(eval-region :which-key "eval region"))
+    "er"  '(eval-region :which-key "eval region")
+    "h"   '(:ignore t :which-key "eval")
+    "hr"  '(uchronia-repeat :which-key "uchronia repeat")
+    "hs"  '(uchronia-select :which-key "uchronia select"))
 
   (general-create-definer p-text-leader-def
     :prefix ";"

@@ -130,6 +130,8 @@
 ;; Non-melpa packages
 (require 'color-rg)
 (require 'ess-stata-mode)
+(require 'uchronia)
+(uchronia-mode 1)
 
 
 (provide 'init)
