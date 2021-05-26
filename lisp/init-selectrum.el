@@ -15,19 +15,21 @@
     (global-set-key [remap execute-extended-command] 'execute-extended-command))
 
   (when (maybe-require-package 'embark)
-    ;; (setq embark-prompter 'embark-completing-read-prompter)
+    (global-set-key (kbd "C-c C-m") 'embark-act)
+    (setq embark-prompter 'embark-completing-read-prompter)
     (setq embark-keymap-prompter-key ",")
-    ;; show embark actions in multiple columns
-    ;; https://protesilaos.com/dotemacs/
-    (setq embark-action-indicator
-          (lambda (map _target)
-            (which-key--show-keymap "Embark" map nil nil 'no-paging)
-            'which-key--hide-popup-ignore-command)
-          embark-become-indicator embark-action-indicator)
     (define-key selectrum-minibuffer-map (kbd "C-c C-o") 'embark-export)
     (define-key selectrum-minibuffer-map (kbd "C-o") 'embark-act))
 
   (when (maybe-require-package 'consult)
+    (setq consult-imenu-config
+          '((emacs-lisp-mode :toplevel "Functions"
+                             :types ((?f "Functions" font-lock-function-name-face)
+                                     (?m "Macros"    font-lock-keyword-face)
+                                     (?p "Packages"  font-lock-constant-face)
+                                     (?t "Types"     font-lock-type-face)
+                                     (?v "Variables" font-lock-variable-name-face)))))
+
     (when (maybe-require-package 'projectile)
       (setq-default consult-project-root-function 'projectile-project-root))
 
@@ -41,6 +43,7 @@
       (interactive)
       (consult-line (thing-at-point 'symbol)))
 
+    (global-set-key (kbd "C-x l")   'consult-line)
     (global-set-key (kbd "M-?") 'sanityinc/consult-ripgrep-at-point)
     (global-set-key [remap switch-to-buffer] 'consult-buffer)
     (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)

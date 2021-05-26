@@ -8,8 +8,6 @@
 (setq company-idle-delay 0
       company-minimum-prefix-length 1)
 
-(autoload 'company-mode "company")
-
 (when (maybe-require-package 'company)
   (add-hook 'after-init-hook 'global-company-mode)
   (with-eval-after-load 'company

@@ -24,11 +24,6 @@
 
 (global-set-key (kbd "C-x k")   'kill-this-buffer)
 (global-set-key (kbd "C-x K")   'kill-buffer-and-window)
-(global-set-key (kbd "C-x l")   'consult-line)
-
-(global-set-key (kbd "C-c c")   'org-capture)
-(global-set-key (kbd "C-c C-m") 'embark-act)
-
 (global-set-key (kbd "C-w")     'backward-kill-word)
 
 
