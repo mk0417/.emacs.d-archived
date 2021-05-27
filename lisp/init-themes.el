@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(require-package 'modus-themes)
+;; Modus theme is built in latest Emacs master branch
+;; Do not need to install
+;; (require-package 'modus-themes)
 
 (setq modus-themes-slanted-constructs t
       modus-themes-bold-constructs t
@@ -27,8 +29,10 @@
 
 (setq x-underline-at-descent-line t)
 
-(modus-themes-load-themes)
-(modus-themes-load-vivendi)
+(load-theme 'modus-vivendi t)
+
+;; (modus-themes-load-themes)
+;; (modus-themes-load-vivendi)
 
 ;; selected text color
 (set-face-attribute 'region nil :background "#696969")
