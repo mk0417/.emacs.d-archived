@@ -13,6 +13,8 @@
 
   (when (maybe-require-package 'embark)
     (global-set-key (kbd "C-c C-m") 'embark-act)
+    (setq embark-prompter 'embark-completing-read-prompter)
+    (setq embark-keymap-prompter-key ",")
     (with-eval-after-load 'vertico
       (define-key vertico-map (kbd "C-c C-o") 'embark-export)
       (define-key vertico-map (kbd "C-o") 'embark-act)))
