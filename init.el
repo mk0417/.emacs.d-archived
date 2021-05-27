@@ -41,7 +41,7 @@
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
-(require 'init-themes)
+;; (require 'init-themes)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-isearch)
@@ -49,7 +49,8 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-recentf)
-(require 'init-selectrum)
+;; (require 'init-selectrum)
+(require 'init-minibuffer)
 (require 'init-hippie-expand)
 (require 'init-default)
 (require 'init-snippet)
@@ -99,8 +100,6 @@
 (require-package 'htmlize)
 (when *is-a-mac*
   (require-package 'osx-location))
-(unless (eq system-type 'windows-nt)
-  (maybe-require-package 'daemons))
 (maybe-require-package 'dotenv-mode)
 (maybe-require-package 'shfmt)
 
