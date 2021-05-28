@@ -193,6 +193,7 @@
     "tp"  '(variable-pitch-mode :which-key "pitch font mode")
     "ts"  '(sql-connect :which-key "connect sql")
     "tw"  '(count-words :which-key "count words")
+    "tl"  '(count-lines-page :which-key "count lines")
     "tf"  '(p-display-file-name :which-key "show file name")
     "h"   '(:ignore t :which-key "hydra")
     "hf"  '(hydra-quick-files/body :which-key "hydra files")
