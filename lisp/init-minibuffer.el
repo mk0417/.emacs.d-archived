@@ -48,32 +48,6 @@
         (add-to-list 'consult-config
                      `(,cmd :preview-key ,(kbd "M-P"))))
 
-      (defun p-consult-at-point-line (&optional initial)
-        (interactive)
-        (consult-line (thing-at-point 'symbol)))
-
-      (defun p-consult-rg-current-dir (&optional initial)
-        (interactive "P")
-        (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) initial))
-
-      (defun p-consult-rg-other-dir (&optional initial)
-        (interactive "P")
-        (consult--grep "Ripgrep current dir" consult-ripgrep-command (read-directory-name "consult-rg directory:") initial))
-
-      (defun p-consult-rg-at-point-current-dir ()
-        (interactive)
-        (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) (thing-at-point 'symbol)))
-
-      (defun p-consult-fd-local (&optional dir initial)
-        (interactive "P")
-        (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
-          (consult-find dir initial)))
-
-      (defun p-consult-fd-global (&optional initial)
-        (interactive "P")
-        (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
-          (consult-find "~/" initial)))
-
       (when (maybe-require-package 'projectile)
         (setq-default consult-project-root-function 'projectile-project-root)))
 
@@ -85,6 +59,37 @@
 (when (maybe-require-package 'marginalia)
   (add-hook 'after-init-hook 'marginalia-mode)
   (setq-default marginalia-annotators '(marginalia-annotators-heavy)))
+
+
+(require 'consult)
+
+(defun p-consult-at-point-line (&optional initial)
+  (interactive)
+  (consult-line (thing-at-point 'symbol)))
+
+(defun p-consult-rg-current-dir (&optional initial)
+  (interactive "P")
+  (if (equal buffer-file-name nil)
+      (consult--grep "Ripgrep current dir" consult-ripgrep-command "/Users/ml/" initial)
+    (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) initial)))
+
+(defun p-consult-rg-other-dir (&optional initial)
+  (interactive "P")
+  (consult--grep "Ripgrep current dir" consult-ripgrep-command (read-directory-name "consult-rg directory:") initial))
+
+(defun p-consult-rg-at-point-current-dir ()
+  (interactive)
+  (consult--grep "Ripgrep current dir" consult-ripgrep-command (file-name-directory buffer-file-name) (thing-at-point 'symbol)))
+
+(defun p-consult-fd-local (&optional dir initial)
+  (interactive "P")
+  (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
+    (consult-find dir initial)))
+
+(defun p-consult-fd-global (&optional initial)
+  (interactive "P")
+  (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
+    (consult-find "~/" initial)))
 
 
 (provide 'init-minibuffer)
