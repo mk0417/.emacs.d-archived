@@ -40,10 +40,12 @@
     (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
     (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
     (global-set-key [remap goto-line] 'consult-goto-line)
+    (global-set-key (kbd "C-x l")   'consult-line)
 
     (with-eval-after-load 'consult
       (setf (alist-get 'consult-buffer consult-config) `(:preview-key, (kbd "M-v")))
       (setf (alist-get 'consult-recent-file consult-config) `(:preview-key, (kbd "M-v")))
+      (setf (alist-get 'consult-buffer-other-window  consult-config) `(:preview-key, (kbd "M-v")))
       (dolist (cmd '(consult-ripgrep affe-grep sanityinc/affe-grep-at-point))
         (add-to-list 'consult-config
                      `(,cmd :preview-key ,(kbd "M-P"))))
@@ -90,6 +92,9 @@
   (interactive "P")
   (let ((consult-find-command "fd --color=never --full-path ARG OPTS"))
     (consult-find "~/" initial)))
+
+
+(define-key minibuffer-mode-map (kbd "C-k")   'delete-backward-char)
 
 
 (provide 'init-minibuffer)
