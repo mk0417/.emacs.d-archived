@@ -9,7 +9,7 @@
   (with-eval-after-load 'vertico
     (require 'orderless))
 
-  (setq completion-styles '(substring orderless))
+  (setq completion-styles '(basic partial-completion orderless))
 
   (when (maybe-require-package 'embark)
     (global-set-key (kbd "C-c C-m") 'embark-act)
@@ -59,8 +59,7 @@
         (add-hook 'embark-collect-mode-hook 'embark-consult-preview-minor-mode)))))
 
 (when (maybe-require-package 'marginalia)
-  (add-hook 'after-init-hook 'marginalia-mode)
-  (setq-default marginalia-annotators '(marginalia-annotators-heavy)))
+  (add-hook 'after-init-hook 'marginalia-mode))
 
 
 (require 'consult)
