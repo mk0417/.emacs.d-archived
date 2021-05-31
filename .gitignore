@@ -57,4 +57,4 @@ site-lisp/package/
 package-quickstart.el
 .agignore
 .dir-locals.el
-/devdocs-browser
+devdocs-browser/
