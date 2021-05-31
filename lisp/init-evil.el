@@ -217,7 +217,13 @@
     "er"  '(eval-region :which-key "eval region")
     "h"   '(:ignore t :which-key "eval")
     "hr"  '(uchronia-repeat :which-key "uchronia repeat")
-    "hs"  '(uchronia-select :which-key "uchronia select"))
+    "hs"  '(uchronia-select :which-key "uchronia select")
+    "d"   '(:ignore t :which-key "devdocs")
+    "di"  '(devdocs-browser-install-docs :which-key "devdocs install docs")
+    "dI"  '(devdocs-browser-uninstall-docs :which-key "devdocs uninstall docs")
+    "du"  '(devdocs-browser-update-docs :which-key "devdocs update docs")
+    "dU"  '(devdocs-browser-upgrade-docs :which-key "devdocs upgrade docs")
+    "do"  '(devdocs-browser-open-in :which-key "devdocs open in"))
 
   (general-create-definer p-text-leader-def
     :prefix ";"
