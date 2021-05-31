@@ -4,7 +4,7 @@
 
 (when (maybe-require-package 'key-chord)
   (key-chord-mode 1)
-  (setq key-chord-two-keys-delay 0.25)
+  (setq key-chord-two-keys-delay 0.3)
   (dolist (m (list evil-insert-state-map evil-ex-completion-map minibuffer-mode-map))
     (key-chord-define m "kk" "()\C-b")
     (key-chord-define m ",," "[]\C-b")
@@ -26,6 +26,9 @@
     (key-chord-define m ",g" ">")
     (key-chord-define m "ww" "?")
     (key-chord-define m "vv" "#")
+    (key-chord-define m ",a" "--")
+    (key-chord-define m ",b" "<=")
+    (key-chord-define m ",c" ">=")
     (key-chord-define m "ej" "<-")
     (key-chord-define m "rj" "%>%")
     (key-chord-define m "nj" "|>")
@@ -46,7 +49,7 @@
     (insert "£"))
   (general-imap "y"
     (general-key-dispatch 'self-insert-command
-      :timeout 0.25
+      :timeout 0.3
       "b" 'p-insert-pound)))
 
 
