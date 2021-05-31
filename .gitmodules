@@ -7,3 +7,6 @@
 [submodule "site-lisp/uchronia"]
 	path = site-lisp/uchronia
 	url = https://github.com/minad/uchronia.git
+[submodule "site-lisp/emacs-devdocs-browser"]
+	path = site-lisp/emacs-devdocs-browser
+	url = https://github.com/blahgeek/emacs-devdocs-browser.git
