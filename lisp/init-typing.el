@@ -24,6 +24,7 @@
     (key-chord-define m "bw" "~")
     (key-chord-define m ",l" "<")
     (key-chord-define m ",g" ">")
+    (key-chord-define m ",t" "<>\C-b")
     (key-chord-define m "ww" "?")
     (key-chord-define m "vv" "#")
     (key-chord-define m ",a" "--")
