@@ -95,6 +95,9 @@
 
 (define-key minibuffer-mode-map (kbd "C-k")   'delete-backward-char)
 
+;; Non-melpa packages
+(require 'color-rg)
+
 
 (provide 'init-minibuffer)
 ;;; init-minibuffer.el ends here
