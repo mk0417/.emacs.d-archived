@@ -86,5 +86,9 @@
     "er" 'ess-eval-region-or-line-and-step))
 
 
+;; Devdocs
+(maybe-require-package 'devdocs-browser)
+
+
 (provide 'init-prog)
 ;;; init-prog.el ends here

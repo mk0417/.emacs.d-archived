@@ -52,8 +52,6 @@
 (with-eval-after-load 'uchronia
   (diminish 'uchronia-mode))
 
-(require 'devdocs-browser)
-
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
