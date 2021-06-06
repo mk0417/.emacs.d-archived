@@ -73,6 +73,7 @@
   (define-key evil-normal-state-map (kbd "C-u")  'evil-scroll-up)
   (define-key evil-normal-state-map (kbd "C-i")  'p-delete-backward-to-tab)
   (define-key evil-normal-state-map (kbd "C-r")  'undo-fu-only-redo)
+  (define-key evil-normal-state-map (kbd "C-b")  'backward-char)
   (define-key evil-normal-state-map (kbd "gn")   'diff-hl-next-hunk)
   (define-key evil-normal-state-map (kbd "gp")   'diff-hl-previous-hunk)
   (define-key evil-normal-state-map (kbd "gP")   'diff-hl-diff-goto-hunk)
@@ -90,6 +91,7 @@
   (define-key evil-normal-state-map (kbd "gcc")  'evilnc-comment-or-uncomment-lines)
 
   (define-key evil-visual-state-map (kbd "C-e")  'evil-end-of-line)
+  (define-key evil-visual-state-map (kbd "C-b")  'backward-char)
   (define-key evil-visual-state-map (kbd "v")    'er/expand-region)
   (define-key evil-visual-state-map (kbd "gok")  'p-surround-parens)
   (define-key evil-visual-state-map (kbd "gof")  'p-surround-brackets)
@@ -110,6 +112,7 @@
 
   (define-key evil-ex-completion-map (kbd "C-w") 'backward-kill-word)
   (define-key evil-ex-completion-map (kbd "C-f") 'forward-char)
+  (define-key evil-ex-completion-map (kbd "C-b")  'backward-char)
 
   (define-key evil-inner-text-objects-map "f" 'evil-inner-bracket)
   (define-key evil-inner-text-objects-map "h" 'evil-inner-curly)
