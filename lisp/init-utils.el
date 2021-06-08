@@ -218,17 +218,6 @@
   (interactive "*r")
   (delete-duplicate-lines start end))
 
-;; insert html tag
-;; https://www.youtube.com/watch?v=aJsVD8nIoHA
-(defun p-html-region-insert-tag (begin end tag)
-  (interactive "r\nsTag:")
-  (goto-char end)
-  (insert (concat "</" tag ">"))
-  (let* ((real-end (set-marker (make-marker) (point))))
-    (goto-char begin)
-    (insert (concat "<" tag ">"))
-    (goto-char real-end)))
-
 ;; Display file name
 (defun p-display-file-name ()
   (interactive)
@@ -287,6 +276,10 @@
          (lambda ($fpath) (let ((process-connection-type nil))
                             (start-process "" nil "xdg-open" $fpath)))
          $file-list))))))
+
+
+(maybe-require-package 'xah-get-thing)
+(maybe-require-package 'xah-replace-pairs)
 
 
 (provide 'init-utils)
