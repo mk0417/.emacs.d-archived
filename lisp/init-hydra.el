@@ -36,7 +36,7 @@ _y_: yankpad                         ^ ^
 (defhydra hydra-zoom (:color pink)
   ("i" text-scale-increase "zoom in")
   ("o" text-scale-decrease "zoom out")
-  ("r" (text-scale-adjust 0) "zoom in" :exit t))
+  ("r" (text-scale-adjust 0) "zoom reset" :exit t))
 
 
 (with-eval-after-load 'org
