@@ -65,7 +65,8 @@
 (require 'init-git)
 (require 'init-github)
 (require 'init-projectile)
-(require 'init-typing)
+;; I perfer to karabiner
+;; (require 'init-typing)
 (require 'init-compile)
 (require 'init-markdown)
 (require 'init-csv)
