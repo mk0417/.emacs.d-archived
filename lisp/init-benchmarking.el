@@ -65,7 +65,8 @@ LOAD-DURATION is the time taken in milliseconds to load FEATURE.")
 
 
 (defun sanityinc/show-init-time ()
-  (message "init completed in %.2fs"
+  (message "load %s packages; init completed in %.2fs"
+           (length package-selected-packages)
            (sanityinc/time-subtract-millis after-init-time before-init-time)))
 
 ;; (add-hook 'after-init-hook 'sanityinc/show-init-time)

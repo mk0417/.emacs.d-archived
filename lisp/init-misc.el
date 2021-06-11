@@ -45,8 +45,10 @@
 
 (add-auto-mode 'conf-mode "^Procfile\\'")
 
+(maybe-require-package 'esup)
 
 ;; Non-melpa packages
+(require 'color-rg)
 (require 'uchronia)
 (uchronia-mode 1)
 (with-eval-after-load 'uchronia
