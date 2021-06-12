@@ -26,12 +26,34 @@
   (add-hook 'emacs-startup-hook
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
+
+;; Inherit variables from .zshrc
+;; http://ergoemacs.org/emacs/emacs_env_var_paths.html
+(let ((p-path
+       '("/Users/ml/anaconda3/bin" ":"
+         "/Users/ml/anaconda3/bin/jupyter" ":"
+         "/usr/local/bin" ":"
+         "/usr/local/sbin" ":"
+         "/usr/bin" ":"
+         "/bin" ":"
+         "/usr/sbin" ":"
+         "/sbin" ":"
+         "/Applications/Stata/StataMP.app/Contents/MacOS/" ":"
+         "/Applications/Stata/StataMP.app/Contents/MacOS/stata" ":"
+         "/Library/TeX/texbin" ":"
+         "/Users/ml/.emacs.d/bin" ":"
+         "/Users/ml/.cargo/bin" ":"
+         "/Applications/Emacs.app/Contents/MacOS/bin" ":")))
+  (setenv "PATH" (mapconcat 'identity p-path ":") )
+  (setq exec-path (append p-path (list "." exec-directory))))
+
+
 ;; Bootstrap config
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
-(require 'init-exec-path) ;; Set up $PATH
+;; (require 'init-exec-path) ;; Set up $PATH
 (require 'init-utils) ;; Must come after init-elpa
 
 ;; Load configs for specific features and modes

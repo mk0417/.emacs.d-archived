@@ -62,7 +62,7 @@
   (add-hook 'after-init-hook 'marginalia-mode))
 
 
-(require 'consult)
+(autoload 'consult--grep "consult")
 
 (defun p-consult-at-point-line (&optional initial)
   (interactive)

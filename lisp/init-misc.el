@@ -48,8 +48,17 @@
 (maybe-require-package 'esup)
 
 ;; Non-melpa packages
-(require 'color-rg)
-(require 'uchronia)
+;; color-rg
+(autoload 'color-rg-search-input-in-current-file "color-rg")
+(autoload 'color-rg-search-symbol-in-current-file "color-rg")
+(autoload 'color-rg-search-input "color-rg")
+(autoload 'color-rg-search-symbol "color-rg")
+(autoload 'color-rg-search-input-in-project "color-rg")
+(autoload 'color-rg-search-symbol-in-project "color-rg")
+(autoload 'color-rg-mode "color-rg")
+
+;; uchronia
+(autoload 'uchronia-mode "uchronia")
 (uchronia-mode 1)
 (with-eval-after-load 'uchronia
   (diminish 'uchronia-mode))
