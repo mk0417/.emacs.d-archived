@@ -21,7 +21,7 @@
   (setq dired-recursive-deletes 'top)
   (define-key dired-mode-map [mouse-2] 'dired-find-file)
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode)
-  (define-key dired-mode-map (kbd "<C-return>") 'p-open-in-external-app)
+  (define-key dired-mode-map (kbd "<C-return>") 'xah-open-in-external-app)
 
   (general-create-definer p-dired-leader-def
     :prefix ";"
