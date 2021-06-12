@@ -141,6 +141,7 @@
     "fo"  '(find-file-other-window :which-key "open file in another window")
     "fp"  '(p-find-file-in-config :which-key "find config file")
     "fR"  '(rename-this-file-and-buffer :which-key "rename file")
+    "fc"  '(copy-file :which-key "copy file")
     "b"   '(:ignore t :which-key "buffer")
     "bb"  '(consult-buffer :which-key "consult switch buffer")
     "bd"  '(kill-this-buffer :which-key "kill buffer")
