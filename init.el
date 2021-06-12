@@ -109,6 +109,7 @@
 (require 'init-prog)
 (require 'init-org)
 (require 'init-hydra)
+(require 'init-xah)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
