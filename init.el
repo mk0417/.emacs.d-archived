@@ -30,20 +30,20 @@
 ;; Inherit variables from .zshrc
 ;; http://ergoemacs.org/emacs/emacs_env_var_paths.html
 (let ((p-path
-       '("/Users/ml/anaconda3/bin" ":"
-         "/Users/ml/anaconda3/bin/jupyter" ":"
-         "/usr/local/bin" ":"
-         "/usr/local/sbin" ":"
-         "/usr/bin" ":"
-         "/bin" ":"
-         "/usr/sbin" ":"
-         "/sbin" ":"
-         "/Applications/Stata/StataMP.app/Contents/MacOS/" ":"
-         "/Applications/Stata/StataMP.app/Contents/MacOS/stata" ":"
-         "/Library/TeX/texbin" ":"
-         "/Users/ml/.emacs.d/bin" ":"
-         "/Users/ml/.cargo/bin" ":"
-         "/Applications/Emacs.app/Contents/MacOS/bin" ":")))
+       '("/Users/ml/anaconda3/bin"
+         "/Users/ml/anaconda3/bin/jupyter"
+         "/usr/local/bin"
+         "/usr/local/sbin"
+         "/usr/bin"
+         "/bin"
+         "/usr/sbin"
+         "/sbin"
+         "/Applications/Stata/StataMP.app/Contents/MacOS/"
+         "/Applications/Stata/StataMP.app/Contents/MacOS/stata"
+         "/Library/TeX/texbin"
+         "/Users/ml/.emacs.d/bin"
+         "/Users/ml/.cargo/bin"
+         "/Applications/Emacs.app/Contents/MacOS/bin")))
   (setenv "PATH" (mapconcat 'identity p-path ":") )
   (setq exec-path (append p-path (list "." exec-directory))))
 
