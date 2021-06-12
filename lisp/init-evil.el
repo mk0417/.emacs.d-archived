@@ -116,7 +116,8 @@
 
   (define-key evil-ex-completion-map (kbd "C-w") 'backward-kill-word)
   (define-key evil-ex-completion-map (kbd "C-f") 'forward-char)
-  (define-key evil-ex-completion-map (kbd "C-b")  'backward-char)
+  (define-key evil-ex-completion-map (kbd "C-b") 'backward-char)
+  (define-key evil-ex-completion-map (kbd "C-k") 'delete-backward-char)
 
   (define-key evil-inner-text-objects-map "f" 'evil-inner-bracket)
   (define-key evil-inner-text-objects-map "h" 'evil-inner-curly)
@@ -222,8 +223,10 @@
     "sp"  '(color-rg-search-input-in-project :which-key "search input in project")
     "sP"  '(color-rg-search-symbol-in-project :which-key "search symbol in project")
     "e"   '(:ignore t :which-key "eval")
-    "ee"  '(eval-buffer :which-key "eval buffer")
+    "ef"  '(eval-buffer :which-key "eval buffer")
     "er"  '(eval-region :which-key "eval region")
+    "ee"  '(eval-expression :which-key "eval expression")
+    "el"  '(eval-last-sexp :which-key "eval last sexp")
     "h"   '(:ignore t :which-key "uchronia")
     "hr"  '(uchronia-repeat :which-key "uchronia repeat")
     "hs"  '(uchronia-select :which-key "uchronia select")
