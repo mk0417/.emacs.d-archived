@@ -57,6 +57,8 @@
 (autoload 'color-rg-search-symbol-in-project "color-rg")
 (autoload 'color-rg-mode "color-rg")
 
+(setq color-rg-mac-load-path-from-shell nil)
+
 ;; uchronia
 (autoload 'uchronia-mode "uchronia")
 (uchronia-mode 1)
