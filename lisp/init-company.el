@@ -46,12 +46,13 @@
   (global-set-key (kbd "M-C-/") 'company-complete))
 
 
-(when (maybe-require-package 'company-box)
-  (add-hook 'company-mode-hook 'company-box-mode)
-  (setq company-box-doc-enable nil
-        company-box-backends-colors nil)
-  (with-eval-after-load 'company-box
-    (diminish 'company-box-mode)))
+;; Company-box does not work with Emacs with no titlebar
+;; (when (maybe-require-package 'company-box)
+;;   (add-hook 'company-mode-hook 'company-box-mode)
+;;   (setq company-box-doc-enable nil
+;;         company-box-backends-colors nil)
+;;   (with-eval-after-load 'company-box
+;;     (diminish 'company-box-mode)))
 
 
 (provide 'init-company)
