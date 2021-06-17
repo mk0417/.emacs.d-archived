@@ -35,8 +35,11 @@
 
 (fringe-mode '(8 . 0))
 
-(when (member "DejaVu Sans Mono" (font-family-list))
-  (set-frame-font "DejaVu Sans Mono" t t))
+;; (when (member "DejaVu Sans Mono" (font-family-list))
+;;   (set-frame-font "DejaVu Sans Mono" t t))
+
+(when (member "Hack" (font-family-list))
+  (set-frame-font "Hack" t t))
 
 
 (defun sanityinc/adjust-opacity (frame incr)
