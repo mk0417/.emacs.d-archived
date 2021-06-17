@@ -108,8 +108,15 @@ Version 2015-10-01"
   (re-search-forward (regexp-opt xah-right-brackets) nil t))
 
 
-(require 'xah-get-thing)
-(require 'xah-replace-pairs)
+;; (require 'xah-get-thing)
+;; (require 'xah-replace-pairs)
+
+(autoload 'xah-get-bounds-of-thing "xah-get-thing")
+(autoload 'xah-get-bounds-of-thing-or-region "xah-get-thing")
+
+(autoload 'xah-replace-pairs-region "xah-replace-pairs")
+(autoload 'xah-replace-regexp-pairs-region "xah-replace-pairs")
+
 
 (defun xah-html-lines-to-list ()
   "Make the current block of lines into a HTML list.
