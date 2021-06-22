@@ -6,12 +6,14 @@
   (add-hook 'after-init-hook 'vertico-mode)
 
   (require-package 'orderless)
-  (with-eval-after-load 'vertico
-    (require 'orderless))
+  (setq completion-styles '(substring orderless))
 
-  (defun sanityinc/use-orderless-in-minibuffer ()
-    (setq-local completion-styles '(substring orderless)))
-  (add-hook 'minibuffer-setup-hook 'sanityinc/use-orderless-in-minibuffer)
+  ;; sanityinc/use-orderless-in-minibuffer cause problems on consult--grep
+  ;; (with-eval-after-load 'vertico
+  ;;   (require 'orderless))
+  ;; (defun sanityinc/use-orderless-in-minibuffer ()
+  ;;   (setq-local completion-styles '(substring orderless)))
+  ;; (add-hook 'minibuffer-setup-hook 'sanityinc/use-orderless-in-minibuffer)
 
   (when (maybe-require-package 'embark)
     (global-set-key (kbd "C-c C-m") 'embark-act)
