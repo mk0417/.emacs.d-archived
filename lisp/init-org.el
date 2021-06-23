@@ -350,7 +350,7 @@ typical word processor."
     (progn
       (org-tree-slide-mode 1)
       (olivetti-mode 1)
-      (text-scale-increase 5)
+      (text-scale-increase 3)
       (fringe-mode '(0 . 0))
       (beacon-mode 0)))
   (defun p-org-presentation-off ()
