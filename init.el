@@ -110,6 +110,7 @@
 (require 'init-org)
 (require 'init-hydra)
 (require 'init-xah)
+(require 'init-latex)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
