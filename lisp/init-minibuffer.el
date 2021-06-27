@@ -32,13 +32,31 @@
                                      (?t "Types"     font-lock-type-face)
                                      (?v "Variables" font-lock-variable-name-face)))))
 
-    (when (executable-find "rg")
-      (maybe-require-package 'affe)
+
+    (defmacro sanityinc/no-consult-preview (&rest cmds)
+      `(with-eval-after-load 'consult
+         (consult-customize ,@cmds :preview-key (kbd "M-v"))))
+
+    (sanityinc/no-consult-preview
+     consult-ripgrep
+     consult-git-grep consult-grep
+     consult-bookmark consult-recent-file consult-xref
+     consult--source-file consult--source-project-file consult--source-bookmark)
+
+
+    (when (maybe-require-package 'projectile)
+      (setq-default consult-project-root-function 'projectile-project-root))
+
+
+    (when (and (executable-find "rg") (maybe-require-package 'affe))
       (defun sanityinc/affe-grep-at-point (&optional dir initial)
         (interactive (list prefix-arg (when-let ((s (symbol-at-point)))
                                         (symbol-name s))))
         (affe-grep dir initial))
-      (global-set-key (kbd "M-?") 'sanityinc/affe-grep-at-point))
+      (global-set-key (kbd "M-?") 'sanityinc/affe-grep-at-point)
+      (sanityinc/no-consult-preview sanityinc/affe-grep-at-point)
+      (with-eval-after-load 'affe (sanityinc/no-consult-preview affe-grep)))
+
 
     (global-set-key [remap switch-to-buffer] 'consult-buffer)
     (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
@@ -46,21 +64,12 @@
     (global-set-key [remap goto-line] 'consult-goto-line)
     (global-set-key (kbd "C-x l")   'consult-line)
 
-    (with-eval-after-load 'consult
-      (setf (alist-get 'consult-buffer consult-config) `(:preview-key, (kbd "M-v")))
-      (setf (alist-get 'consult-recent-file consult-config) `(:preview-key, (kbd "M-v")))
-      (setf (alist-get 'consult-buffer-other-window  consult-config) `(:preview-key, (kbd "M-v")))
-      (dolist (cmd '(consult-ripgrep affe-grep sanityinc/affe-grep-at-point))
-        (add-to-list 'consult-config
-                     `(,cmd :preview-key ,(kbd "M-P"))))
-
-      (when (maybe-require-package 'projectile)
-        (setq-default consult-project-root-function 'projectile-project-root)))
 
     (when (maybe-require-package 'embark-consult)
       (with-eval-after-load 'embark
         (require 'embark-consult)
         (add-hook 'embark-collect-mode-hook 'embark-consult-preview-minor-mode)))))
+
 
 (when (maybe-require-package 'marginalia)
   (add-hook 'after-init-hook 'marginalia-mode))
