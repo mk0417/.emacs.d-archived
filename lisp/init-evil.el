@@ -3,13 +3,13 @@
 ;;; Code:
 
 ;; this must be set before loading evil
-(setq evil-collection-want-unimpaired-p nil)
-(setq evil-want-keybinding nil)
+;; (setq evil-collection-want-unimpaired-p nil)
+;; (setq evil-want-keybinding nil)
 
 (when (maybe-require-package 'evil)
   (evil-mode 1)
 
-  (maybe-require-package 'evil-collection)
+  ;; (maybe-require-package 'evil-collection)
   (maybe-require-package 'evil-nerd-commenter)
   (maybe-require-package 'expand-region)
   (maybe-require-package 'general)
@@ -33,8 +33,7 @@
       (add-hook 'evil-escape-inhibit-functions
                 (defun p-evil-inhibit-escape-in-minibuffer ()
                   (and (minibufferp)
-                       (or (not (bound-and-true-p evil-collection-setup-minibuffer))
-                           (evil-normal-state-p)))))
+                       (evil-normal-state-p))))
       (evil-escape-mode 1)
       (setq-default evil-escape-key-sequence "fd"))
     (diminish 'evil-escape-mode))
@@ -67,7 +66,7 @@
         evil-vsplit-window-right t
         evil-split-window-below t)
 
-  (evil-collection-init)
+  ;; (evil-collection-init)
 
   (define-key evil-normal-state-map (kbd "C-e")  'evil-end-of-line)
   (define-key evil-normal-state-map (kbd "C-u")  'evil-scroll-up)
@@ -238,7 +237,12 @@
     "dI"  '(devdocs-browser-uninstall-docs :which-key "devdocs uninstall docs")
     "du"  '(devdocs-browser-update-docs :which-key "devdocs update docs")
     "dU"  '(devdocs-browser-upgrade-docs :which-key "devdocs upgrade docs")
-    "do"  '(devdocs-browser-open-in :which-key "devdocs open in"))
+    "do"  '(devdocs-browser-open-in :which-key "devdocs open in")
+    "c"   '(:ignore t :which-key "citre")
+    "cd"  '(citre-jump :which-key "citre jump to definition")
+    "cb"  '(citre-jump-back :which-key "citre jump back")
+    "ca"  '(citre-ace-peek :which-key "citre ace peek")
+    "cp"  '(citre-peek :which-key "citre peek"))
 
   (general-create-definer p-text-leader-def
     :prefix ";"
