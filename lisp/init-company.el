@@ -46,6 +46,12 @@
   (global-set-key (kbd "M-C-/") 'company-complete))
 
 
+(when (maybe-require-package 'citre)
+  (add-hook 'find-file-hook #'citre-auto-enable-citre-mode)
+  (setq citre-readtags-program "/usr/local/bin/readtags"
+        citre-project-root-function #'projectile-project-root))
+
+
 ;; Company-box does not work with Emacs with no titlebar
 ;; (when (maybe-require-package 'company-box)
 ;;   (add-hook 'company-mode-hook 'company-box-mode)
