@@ -21,7 +21,7 @@
 
   (defun p-jupyter-eval-block ()
     (interactive)
-    (p-select-block)
+    (xah-select-block)
     (let (beg end)
       (setq beg (region-beginning) end (region-end))
       (jupyter-eval-region beg end))))
